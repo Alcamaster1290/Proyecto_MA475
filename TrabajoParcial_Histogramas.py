@@ -18,7 +18,7 @@ def plot_histogram(image):
     # Mostrar el gráfico
     st.plotly_chart(fig)
     if st.button('Guardar Histograma'):
-        st.write(fig, 'histograma.png')
+        st.download_button('histograma.png',fig)
 
 
 # Función para preprocesar la imagen: ajusta el tamaño y la convierte a escala de grises
@@ -66,8 +66,7 @@ def expand_histogram(image):
     st.image(expanded_image, caption='Imagen con Histograma Expandido', use_column_width=True)
     
     if st.button('Guardar Histograma'):
-        st.write(fig1, 'histograma_grises.png')
-        st.write(fig2, 'histograma_expandido.png')
+        st.download_button('histograma_expandido.png',fig2)
 
 # Función para ecualizar el histograma de una imagen
 def equalize_histogram(image):
@@ -89,8 +88,7 @@ def equalize_histogram(image):
     st.plotly_chart(fig2)
     st.image(equalized_image, caption='Imagen con Histograma Ecualizado', use_column_width=True)
     if st.button('Guardar Histograma'):
-        st.write(fig1, 'histograma_grises.png')
-        st.write(fig2, 'histograma_ecualizado.png')
+        st.download_button('histograma_ecualizado.png',fig2)
 
 # Función principal
 def main():
@@ -123,7 +121,7 @@ def main():
                 equalize_histogram(gray_image)
 
             if st.button('Guardar imagen'):
-                st.write(gray_image, 'imagen_gris.png')
+                st.download_button('imagen_convertida.png',gray_image)
 
 if __name__ == "__main__":
     main()
