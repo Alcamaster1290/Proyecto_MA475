@@ -101,10 +101,10 @@ def main():
             
             # Preprocesar la imagen
             gray_image = preprocess_image(image)
+            st.image(gray_image, caption='Imagen en Escala de Grises', use_column_width=True)
 
             # Botón para mostrar el histograma
             if st.button('Mostrar Histograma'):
-                st.image(gray_image, caption='Imagen en Escala de Grises', use_column_width=True)
                 plot_histogram(gray_image)
 
             # Botón para expandir el histograma
